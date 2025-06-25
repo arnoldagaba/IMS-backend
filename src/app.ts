@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import { config } from "./config/env.js";
 import logger from "./utils/logger.js";
+import appRoutes from "./routes/index.js";
 
 const app: Express = express();
 
@@ -30,5 +31,11 @@ app.use(
         },
     }),
 );
+
+// App Routes
+app.use("/api/v1", appRoutes);
+
+// Error handling middleware
+// TODO: Implement custom error handling middleware
 
 export default app;
