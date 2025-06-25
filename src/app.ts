@@ -12,7 +12,7 @@ const app: Express = express();
 app.use(helmet());
 app.use(
     cors({
-        origin: "*", // Allow 
+        origin: config.CORS_ORIGIN,
         credentials: true,
     }),
 );

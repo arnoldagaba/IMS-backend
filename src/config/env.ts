@@ -10,6 +10,9 @@ const envSchema = z.object({
     // Server
     PORT: z.string().min(2).max(100),
     NODE_ENV: z.enum(["development", "production"]).default("development"),
+
+    // Frontend
+    CORS_ORIGIN: z.string().url().default("http://localhost:5173"),
 });
 
 const env = envSchema.safeParse(process.env);
